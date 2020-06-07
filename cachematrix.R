@@ -1,10 +1,21 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The following program creates a special object that stores a matrix and 
+## cache's its inverse.
 
-## Write a short comment describing this function
+## The function, makeCacheMatrix, creates a special "matrix" object that can 
+## cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
-
+        m <- NULL
+        set <- function(y) {
+                x <<- y
+                m <<- NULL
+        }
+        get <-function() x
+        setinverse <- function(solve) m <<- solve
+        getinverse <- function() m
+        list(set = set, get = get,
+             setinverse = setinverse
+             getinverse = getinverse)
 }
 
 
